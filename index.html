@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/style.css">
+    <title>185 DOM Javascript</title>
+</head>
+
+<body style="display: flex; justify-content: center; align-items: center;">
+    <div class="container">
+        <div class="header" style="text-align: center;">
+            <h3>Pendaftaran Peminatan</h3>
+        </div>
+        <form id="registrationForm">
+            <table style="margin: 0 auto;">
+                <tr>
+                    <td>Nama</td>
+                    <td><input type="text" placeholder="Masukkan Nama Anda" id="nama"></td>
+                </tr>
+                <tr>
+                    <td>Nim</td>
+                    <td><input type="text" placeholder="Masukkan Nim Anda" id="nim"></td>
+                </tr>
+                <tr>
+                    <td>Bidang Peminatan</td>
+                    <td>
+                        <div style="display: flex;">
+                            <input type="radio" name="peminatan" id="progreming" value="Programming">
+                            <label for="progreming">Programming</label>
+                        </div>
+                        <div style="display: flex;">
+                            <input type="radio" name="peminatan" id="jaringan" value="Jaringan">
+                            <label for="jaringan">Jaringan</label>
+                        </div>
+                        <div style="display: flex;">
+                            <input type="radio" name="peminatan" id="data" value="Data">
+                            <label for="data">Data</label>
+                        </div>
+                        <div style="display: flex;">
+                            <input type="radio" name="peminatan" id="design" value="Design">
+                            <label for="design">Design</label>
+                        </div>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>Alamat</td>
+                    <td><textarea name="alamat" id="alamat" placeholder="Masukkan Alamat Lengkap Anda" cols="30" rows="5"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;"><button type="button" onclick="kirimData()">Kirim</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <script>
+        function kirimData() {
+            var nama = document.getElementById("nama").value;
+            var nim = document.getElementById("nim").value;
+            var peminatan = document.querySelector('input[name="peminatan"]:checked').value;
+            var alamat = document.getElementById("alamat").value;
+
+            alert(
+                "Nama Mahasiswa: " + nama +
+                "\nNim: " + nim +
+                "\nPeminatan: " + peminatan +
+                "\nAlamat: " + alamat
+            );
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
